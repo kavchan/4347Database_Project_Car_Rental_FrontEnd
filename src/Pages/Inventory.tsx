@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 
+
 const Inventory: React.FC = () => {
 
     const [cars, setCars] = useState([]);
@@ -28,6 +29,12 @@ const Inventory: React.FC = () => {
                     <th>
                         Model
                     </th>
+                    <th>
+                        Color
+                    </th>
+                    <th>
+                        Price Per Day
+                    </th>
 
                 </tr>
                 </thead>
@@ -38,6 +45,8 @@ const Inventory: React.FC = () => {
                         <td>{car.vin}</td>
                         <td>{car.make}</td>
                         <td>{car.model}</td>
+                        <td>{car.color}</td>
+                        <td>{car.price_per_day}</td>
                     </tr>
                 ))}
                 </tbody>

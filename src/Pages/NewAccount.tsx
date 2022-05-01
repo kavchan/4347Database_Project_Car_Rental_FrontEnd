@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Box, Grid, Button, Container, TextField} from "@mui/material";
 
+
 const NewAccount: React.FC = () => {
 
     const [password, setPassword] = useState('');
@@ -39,6 +40,7 @@ const NewAccount: React.FC = () => {
             .then(text => {
                 console.log(text);
             })
+            alert('Account Created!');
     }
 
     return (

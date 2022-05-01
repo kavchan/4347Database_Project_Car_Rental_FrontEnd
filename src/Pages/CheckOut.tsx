@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import {Box, Grid, Button, Container, TextField} from "@mui/material";
 
+
 const CheckOut: React.FC = () => {
 
-    const [transactionId, setTransactionId] = useState('5');
+    const [transactionId, setTransactionId] = useState('');
     const [cardNumber, setCardNumber] = useState('');
     const [expDate, setExpDate] = useState('');
     const [cardHolder, setCardHolder] = useState('');
@@ -11,7 +12,7 @@ const CheckOut: React.FC = () => {
 
     function handleClick() {
         const query = new URLSearchParams({
-            transactionId: transactionId,
+            // transactionId: transactionId,
             cardNumber: cardNumber,
             expDate: expDate,
             cardHolder: cardHolder,
@@ -23,12 +24,12 @@ const CheckOut: React.FC = () => {
         fetch(`http://localhost/car_rental/payment.php?${query}`)
             .then(response => {
                 console.log(response.status);
-
                 return response.text();
             })
             .then(text => {
                 console.log(text);
             })
+            alert('Payment Added!');
     }
 
     return (
@@ -70,7 +71,7 @@ const CheckOut: React.FC = () => {
                             type="text"
                             value={cardHolder}
                             onChange={e => setCardHolder(e.target.value)}
-                            label="Card Holder Name"
+                            label="Card Holder SSN"
                         />
                     </Grid>
 

@@ -24,8 +24,9 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
             .then(r => r.text())
             .then(txt => {
                 if(txt.includes("Logged in as")){
+                    alert("Logged In!");
                     onLogin();
-                    navigate('/');
+                    navigate('/inventory');
                 }
                 else {
                     alert("Failed to login")
@@ -40,7 +41,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
                 type={'email'}
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                label={'Email'} >
+                label={'SSN'} >
             </TextField>
             <TextField
                 required

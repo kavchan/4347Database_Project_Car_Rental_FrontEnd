@@ -13,7 +13,7 @@ function App() {
     //https://reactrouter.com/docs/en/v6/getting-started/tutorial
     return (
         <Router>
-            <Navigation isLoggedIn={isLoggedIn}/>
+            <Navigation isLoggedIn={false}/>
 
             <Routes>
                 <Route path="/login" element={<Login onLogin={() => setLoginStatus(true)}/>}/>
