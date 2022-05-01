@@ -19,8 +19,8 @@ const Navigation: React.FC<NavigationProps> = ({isLoggedIn}) => {
                     <Button color="inherit" component={Link} to="/">Home</Button>
                     {!isLoggedIn && (
                         <>
-                            <Button color="inherit" component={Link} to="/login">Login</Button>
                             <Button color="inherit" component={Link} to="/signup">Sign Up</Button>
+                            <Button color="inherit" component={Link} to="/login">Login</Button>
                             <Button color="inherit" component={Link} to="/inventory">Search</Button>
                             <Button color="inherit" component={Link} to="/checkout">Cart</Button>
                         </>
