@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-
+import { Link } from 'react-router-dom';
 
 const Inventory: React.FC = () => {
 
@@ -17,6 +17,9 @@ const Inventory: React.FC = () => {
             <table>
                 <thead>
                 <tr>
+                    <th>
+
+                    </th>
                     <th>
                         Car Id
                     </th>
@@ -41,6 +44,7 @@ const Inventory: React.FC = () => {
                 <tbody>
                 {cars.map((car) => (
                     <tr key={car.cs_id}>
+                        <td><Link to="/checkout" state = {{car}}><button>Select</button></Link></td>
                         <td>{car.cs_id}</td>
                         <td>{car.vin}</td>
                         <td>{car.make}</td>
